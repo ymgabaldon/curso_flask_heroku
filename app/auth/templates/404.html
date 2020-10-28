@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <br>
+    <div class="container" style="margin-left: 17%">
+        <h4>Perdón, pero la página solicitada no existe</h4><br>
+        <hr>
+        <span class="label label-primary"><a href="{{ url_for('main.display_books') }}" style="color: floralwhite"> Volver a página principal </a></span>
+    </div>
+{% endblock %}

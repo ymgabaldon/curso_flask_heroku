@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<!-- GUARDO COPIA DE ESTE ARCHIVO PARA VER CÓMO LO HIZO AL PPIO TRAS BOOTSTRAP SE UTILIZA EL OTRO HOME.HTML
+ pero no funciona ninguno de los dos-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h4>Books by {{ publisher.name }}</h4>
+´   <ol>
+        {% for book in publisher_books %}
+
+        <li type="1"
+
+
+         <p>{{ book.title }} by {{book.author}}</p>
+
+         </li>
+
+
+        {% endfor %}
+
+
+    </ol>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+.idea/*
+*.pyc
+*/__pychache__/
+Despliegue en Heroku.txt
+Forms.txt
+Leeme_esquema.txt
+tags de html.txt

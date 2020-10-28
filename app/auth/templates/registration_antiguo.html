@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h4 class ='form'> Regístrate aquí </h4>
+    <div class="container form">
+        <hr>
+        <br>
+        <form action="/register" method="post">
+            {{ form.hidden_tag() }}
+
+            <div class="form_group">
+
+                <!–– el hidden tag asociado al formulario crea un token oculto asociado a cuando se rellena el formulario
+                que se almacena en el diccionario asociado al método request en request.forms..
+                Aquíe, el form.name.label despliega el texto de
+                ¿Cuál es tu nombre y el form.name el hueco para rellenarlo. -->
+                {{ form.name.label }}
+                {{ form.name }}
+            </div>
+
+            <div class="form_group">
+
+                {{ form.email.label }}
+                {{ form.email }}
+            </div>
+            <br>
+                        <div class="form_group">
+
+                {{ form.submit(class='btn btn-primary') }}
+
+            </div>
+
+
+        </form>
+        <br>
+
+        {% if (name) and (email) %}
+            <p> Hola {{ name }}</p>
+            <p> Tu correo es {{ email}} </p>
+        {% endif %}
+
+        {{ request.form }}
+
+
+    </div>
+
+
+{% endblock%}

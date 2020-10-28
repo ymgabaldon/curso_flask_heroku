@@ -1,0 +1,33 @@
+<!--  {% extends 'layout.html' %}  -->
+
+<!DOCTYPE html>
+<!-- GUARDO COPIA DE ESTE ARCHIVO PARA VER CÓMO LO HIZO AL PPIO TRAS BOOTSTRAP SE UTILIZA EL OTRO HOME.HTML
+Metemos imágens cuyo path se incluye aquí y el nombre en la base de datos y cómo
+meter hipervínculos,. En este caso al "publisher".
+ En el hipervínculo de href se pasa la url_for donde se mete el blueprint main y dentro de este la función display_publisher
+ que se puede consultar en el routes.py. publisher_id es el argumento que recibe la función y se lo estamos pasando desde
+ aquí y es igual a book.pub_id.
+ El url_for es donde nos llevará cuando se ejectue el link que es el especeficado en el bluprint para esa función display_publisher:
+ @main.route('/display/publisher/<publisher_id>')
+ -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magic Books Inc</title>
+</head>
+<body>
+    {% for book in Books %}
+        <img src="static/img/{{ book.image }}" alt="book-img" height="200" width="190" class="img-rounded">
+        <h4>Title: {{book.title}} </h4>
+        <p>Authors: {{book.author}}</p>
+        <p>Format: {{book.format}}</p>
+        <p>Rating: {{book.avg_rating}}</p>
+        <p>Pages: {{book.num_pages}}</p>
+    <p><a href="{{ url_for('main.display_publisher',publisher_id=book.pub_id) }}">Publisher ID: {{book.pub_id}}</a></p>
+
+    {% endfor %}
+
+
+</body>
+</html>

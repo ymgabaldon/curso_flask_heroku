@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h4 class ='form'> Regístrate aquí </h4>
+    <div class="container form">
+         <hr>
+        <br>
+         <!–– En esta versión más avanzada del formulario quitamos todo el bloque antiguo y lo sustituimos por
+        el form  antiguo por el nuevo de una sola línea de código que hemos importado en el layout.
+        En el rendertemplate pasamos el form como argumento y lo pasamos al wtf.quick_form que lo despliega solito
+        -- >
+        {{ form.hidden_tag() }}
+        {{ wtf.quick_form(form)}}
+
+    </div>
+
+
+{% endblock%}
